@@ -25,24 +25,24 @@ switch (platform) {
   case 'android':
     switch (arch) {
       case 'arm64':
-        localFileExisted = existsSync(join(__dirname, 'test.android-arm64.node'))
+        localFileExisted = existsSync(join(__dirname, 'get-links-in-string.android-arm64.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.android-arm64.node')
+            nativeBinding = require('./get-links-in-string.android-arm64.node')
           } else {
-            nativeBinding = require('test-android-arm64')
+            nativeBinding = require('@khaf/get-links-in-string-android-arm64')
           }
         } catch (e) {
           loadError = e
         }
         break
       case 'arm':
-        localFileExisted = existsSync(join(__dirname, 'test.android-arm-eabi.node'))
+        localFileExisted = existsSync(join(__dirname, 'get-links-in-string.android-arm-eabi.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.android-arm-eabi.node')
+            nativeBinding = require('./get-links-in-string.android-arm-eabi.node')
           } else {
-            nativeBinding = require('test-android-arm-eabi')
+            nativeBinding = require('@khaf/get-links-in-string-android-arm-eabi')
           }
         } catch (e) {
           loadError = e
@@ -56,13 +56,13 @@ switch (platform) {
     switch (arch) {
       case 'x64':
         localFileExisted = existsSync(
-          join(__dirname, 'test.win32-x64-msvc.node')
+          join(__dirname, 'get-links-in-string.win32-x64-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.win32-x64-msvc.node')
+            nativeBinding = require('./get-links-in-string.win32-x64-msvc.node')
           } else {
-            nativeBinding = require('test-win32-x64-msvc')
+            nativeBinding = require('@khaf/get-links-in-string-win32-x64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -70,13 +70,13 @@ switch (platform) {
         break
       case 'ia32':
         localFileExisted = existsSync(
-          join(__dirname, 'test.win32-ia32-msvc.node')
+          join(__dirname, 'get-links-in-string.win32-ia32-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.win32-ia32-msvc.node')
+            nativeBinding = require('./get-links-in-string.win32-ia32-msvc.node')
           } else {
-            nativeBinding = require('test-win32-ia32-msvc')
+            nativeBinding = require('@khaf/get-links-in-string-win32-ia32-msvc')
           }
         } catch (e) {
           loadError = e
@@ -84,13 +84,13 @@ switch (platform) {
         break
       case 'arm64':
         localFileExisted = existsSync(
-          join(__dirname, 'test.win32-arm64-msvc.node')
+          join(__dirname, 'get-links-in-string.win32-arm64-msvc.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.win32-arm64-msvc.node')
+            nativeBinding = require('./get-links-in-string.win32-arm64-msvc.node')
           } else {
-            nativeBinding = require('test-win32-arm64-msvc')
+            nativeBinding = require('@khaf/get-links-in-string-win32-arm64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -103,12 +103,12 @@ switch (platform) {
   case 'darwin':
     switch (arch) {
       case 'x64':
-        localFileExisted = existsSync(join(__dirname, 'test.darwin-x64.node'))
+        localFileExisted = existsSync(join(__dirname, 'get-links-in-string.darwin-x64.node'))
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.darwin-x64.node')
+            nativeBinding = require('./get-links-in-string.darwin-x64.node')
           } else {
-            nativeBinding = require('test-darwin-x64')
+            nativeBinding = require('@khaf/get-links-in-string-darwin-x64')
           }
         } catch (e) {
           loadError = e
@@ -116,13 +116,13 @@ switch (platform) {
         break
       case 'arm64':
         localFileExisted = existsSync(
-          join(__dirname, 'test.darwin-arm64.node')
+          join(__dirname, 'get-links-in-string.darwin-arm64.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.darwin-arm64.node')
+            nativeBinding = require('./get-links-in-string.darwin-arm64.node')
           } else {
-            nativeBinding = require('test-darwin-arm64')
+            nativeBinding = require('@khaf/get-links-in-string-darwin-arm64')
           }
         } catch (e) {
           loadError = e
@@ -136,12 +136,12 @@ switch (platform) {
     if (arch !== 'x64') {
       throw new Error(`Unsupported architecture on FreeBSD: ${arch}`)
     }
-    localFileExisted = existsSync(join(__dirname, 'test.freebsd-x64.node'))
+    localFileExisted = existsSync(join(__dirname, 'get-links-in-string.freebsd-x64.node'))
     try {
       if (localFileExisted) {
-        nativeBinding = require('./test.freebsd-x64.node')
+        nativeBinding = require('./get-links-in-string.freebsd-x64.node')
       } else {
-        nativeBinding = require('test-freebsd-x64')
+        nativeBinding = require('@khaf/get-links-in-string-freebsd-x64')
       }
     } catch (e) {
       loadError = e
@@ -152,26 +152,26 @@ switch (platform) {
       case 'x64':
         if (isMusl()) {
           localFileExisted = existsSync(
-            join(__dirname, 'test.linux-x64-musl.node')
+            join(__dirname, 'get-links-in-string.linux-x64-musl.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./test.linux-x64-musl.node')
+              nativeBinding = require('./get-links-in-string.linux-x64-musl.node')
             } else {
-              nativeBinding = require('test-linux-x64-musl')
+              nativeBinding = require('@khaf/get-links-in-string-linux-x64-musl')
             }
           } catch (e) {
             loadError = e
           }
         } else {
           localFileExisted = existsSync(
-            join(__dirname, 'test.linux-x64-gnu.node')
+            join(__dirname, 'get-links-in-string.linux-x64-gnu.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./test.linux-x64-gnu.node')
+              nativeBinding = require('./get-links-in-string.linux-x64-gnu.node')
             } else {
-              nativeBinding = require('test-linux-x64-gnu')
+              nativeBinding = require('@khaf/get-links-in-string-linux-x64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -181,26 +181,26 @@ switch (platform) {
       case 'arm64':
         if (isMusl()) {
           localFileExisted = existsSync(
-            join(__dirname, 'test.linux-arm64-musl.node')
+            join(__dirname, 'get-links-in-string.linux-arm64-musl.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./test.linux-arm64-musl.node')
+              nativeBinding = require('./get-links-in-string.linux-arm64-musl.node')
             } else {
-              nativeBinding = require('test-linux-arm64-musl')
+              nativeBinding = require('@khaf/get-links-in-string-linux-arm64-musl')
             }
           } catch (e) {
             loadError = e
           }
         } else {
           localFileExisted = existsSync(
-            join(__dirname, 'test.linux-arm64-gnu.node')
+            join(__dirname, 'get-links-in-string.linux-arm64-gnu.node')
           )
           try {
             if (localFileExisted) {
-              nativeBinding = require('./test.linux-arm64-gnu.node')
+              nativeBinding = require('./get-links-in-string.linux-arm64-gnu.node')
             } else {
-              nativeBinding = require('test-linux-arm64-gnu')
+              nativeBinding = require('@khaf/get-links-in-string-linux-arm64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -209,13 +209,13 @@ switch (platform) {
         break
       case 'arm':
         localFileExisted = existsSync(
-          join(__dirname, 'test.linux-arm-gnueabihf.node')
+          join(__dirname, 'get-links-in-string.linux-arm-gnueabihf.node')
         )
         try {
           if (localFileExisted) {
-            nativeBinding = require('./test.linux-arm-gnueabihf.node')
+            nativeBinding = require('./get-links-in-string.linux-arm-gnueabihf.node')
           } else {
-            nativeBinding = require('test-linux-arm-gnueabihf')
+            nativeBinding = require('@khaf/get-links-in-string-linux-arm-gnueabihf')
           }
         } catch (e) {
           loadError = e
