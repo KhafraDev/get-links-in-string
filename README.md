@@ -29,3 +29,25 @@ declare function getLinksInString (
 	requireScheme = true
 ): string[]
 ```
+
+# Benchmark
+
+*Note*: packages that use a basic regex with little validation or safety checks were not added to this benchmark. If you are parsing trusted inputs, it is likely faster to use a regex (however, you may encounter false positives or some links might not be matched). Also, this package does work with both email addresses and urls without schemes (optionally).
+
+```
+Running "Get links in string" suite...
+Progress: 100%
+
+  @khaf/get-links-in-string:
+    873 588 ops/s, ±1.06%   | fastest
+
+  get-urls:
+    111 ops/s, ±2.56%       | slowest, 99.99% slower
+
+  my-name-is-url:
+    41 775 ops/s, ±1.64%    | 95.22% slower
+
+Finished 3 cases!
+  Fastest: @khaf/get-links-in-string
+  Slowest: get-urls
+```

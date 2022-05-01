@@ -23,7 +23,10 @@
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.6.2",
-    "ava": "^4.0.1"
+    "ava": "^4.0.1",
+    "benny": "^3.7.1",
+    "get-urls": "^11.0.0",
+    "my-name-is-url": "^1.4.0"
   },
   "engines": {
     "node": ">= 10"
